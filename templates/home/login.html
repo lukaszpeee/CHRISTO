@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie - Hrabia Monte Christo</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="island-background">
+        <div class="login-container">
+            <h1 class="title">Witaj na Wyspie Hrabiego Monte Christo</h1>
+            <form method="post" class="login-form">
+                {% csrf_token %}
+                {{ form.username.label_tag }}
+                {{ form.username }}
+                {{ form.password.label_tag }}
+                {{ form.password }}
+                <button type="submit" class="login-button">Zaloguj się</button>
+            </form>
+            Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up</a>
+        </div>
+    </div>
+</body>
+</html>

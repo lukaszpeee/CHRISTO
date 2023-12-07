@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wylogowanie - Hrabia Monte Christo</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="island-background">
+        <div class="login-container">
+        <h1>You have been logged out</h1>
+            <a href="{% url 'login' %}">Log In Again</a>
+        </div>
+    </div>
+</body>
+</html>

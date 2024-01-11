@@ -12,7 +12,7 @@
     <div class="island-background">
         <div class="login-container">
             <h1 class="title">Witaj na Wyspie Hrabiego Monte Christo</h1>
-            <a class="nav-item nav-link" href="{% url 'profile' %}">Your Profile</a>
+            <a class="nav-item nav-link" href="{% url 'user_profile' %}">Your Profile</a>
             <h1 class="title">You are logged in!</h1>
             <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}

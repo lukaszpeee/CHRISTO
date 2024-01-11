@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.island-background {
+    background-image: url('link_do_obrazka_wyspy.jpg'); /* Dodaj link do obrazka wyspy */
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.title {
+    color: #1E6C93;
+}
+
+.login-form {
+    margin-top: 20px;
+}
+
+.login-button {
+    background-color: #1E6C93;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #155162;
+}

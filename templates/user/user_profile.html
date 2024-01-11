@@ -9,14 +9,36 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
 <body>
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
     <div class="island-background">
         <div class="login-container">
             <h1 class="title">Witaj na Wyspie Hrabiego Monte Christo</h1>
-            <h1 class="title">X's Profile</h1>
+            <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+            <h2 class="account-heading">{{ user.username }}</h2>
+             <p class="text-secondary">{{ user.email }}</p>
+            <a href="{% url 'user_profile' %}">Your Twitter Profiles Lists</a>
             <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
                 <button type="submit">Logout</button>
             </form>
+        </div>
+        <br>
+        <div>
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Profile Info</legend>
+              {{ u_form }}
+              {{ p_form }}
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Update</button>
+          </div>
+        </form>
         </div>
     </div>
 </body>
